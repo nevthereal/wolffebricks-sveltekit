@@ -118,7 +118,6 @@ export function getProductData(id: string) {
   let productData = products.find((product) => product.id === id);
 
   if (productData == undefined) {
-    console.log(`The product for the ID ${id} does not exist`);
     return undefined;
   }
 
@@ -129,7 +128,6 @@ export function getProductPage(slug: string) {
   let productData = products.find((product) => product.slug === slug);
 
   if (productData == undefined) {
-    console.log(`The product for the ID ${slug} does not exist`);
     return undefined;
   }
 
