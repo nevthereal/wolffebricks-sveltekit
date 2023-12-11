@@ -1,46 +1,76 @@
 <script lang="ts">
 	import '../app.postcss';
+	import { Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
+	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
 
-	// Floating UI for Popups
-	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { storePopup } from '@skeletonlabs/skeleton';
-	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	initializeStores();
+	const drawerStore: DrawerStore = getDrawerStore();
+
+	const triggerDrawer = (): void => {
+		const s: DrawerSettings = { id: 'nav', position: 'top', height: 'h-auto' };
+		drawerStore.open(s);
+	};
+
+	const triggerCart = (): void => {
+		console.log('Cart opens');
+	};
 </script>
 
-<nav class="flex justify-between mx-4 h-[15vh] md:h-[10vh]">
-	<a href="/" class="hover:scale-105 duration-200 text-6xl md:text-7xl my-auto">
-		<i class="fa-brands fa-wolf-pack-battalion" />
-	</a>
-	<div class="text-lg md:text-xl flex my-auto gap-4">
-		<p class="font-bold hover:scale-105 duration-200">
-			<a href="/products">Products</a>
-		</p>
-		<p class="font-bold hover:scale-105 duration-200">
-			<a href="/info">Info</a>
-		</p>
-	</div>
-	<button class="my-aut hover:scale-105 duration-200 text-3xl md:text-4xl">
-		<div class="flex gap-2 md:gap-3">
-			<i class="fa-solid fa-cart-shopping" />
+<Drawer>
+	{#if $drawerStore.id === 'nav'}
+		<div class="p-6">
+			<a href="/" on:click={() => drawerStore.close()}
+				><h1 class="h1 font-black">Wolffe Bricks</h1></a
+			>
+			<ul class="my-6 text-left w-[75%] mx-auto grid grid-cols-2">
+				<a href="/products" class="anchor h3 mx-auto" on:click={() => drawerStore.close()}
+					>Products</a
+				>
+				<a href="/info" class="anchor h3 mx-auto" on:click={() => drawerStore.close()}>Info</a>
+			</ul>
 		</div>
-	</button>
+	{/if}
+</Drawer>
+
+<nav>
+	<!-- Mobile: -->
+	<div class="flex justify-between p-4 md:hidden">
+		<button class="btn my-auto" on:click={() => triggerDrawer()}
+			><i class="fa-solid fa-bars"></i></button
+		>
+		<button class="btn my-auto" on:click={() => triggerCart()}
+			><i class="fa-solid fa-cart-shopping"></i></button
+		>
+	</div>
+	<!-- Desktop: -->
+	<div class="justify-between hidden md:flex">
+		<a href="/" class="hover:scale-105 duration-200 h1 md:text-7xl my-auto btn">
+			<i class="fa-brands fa-wolf-pack-battalion" />
+		</a>
+		<div class="text-lg md:text-xl flex my-auto gap-4">
+			<a href="/products" class="btn font-bold hover:scale-105 duration-200">Products </a>
+			<a href="/info" class="btn font-bold hover:scale-105 duration-200">Info </a>
+		</div>
+		<button
+			class="my-aut hover:scale-105 duration-200 h1 md:text-4xl btn"
+			on:click={() => triggerCart()}
+		>
+			<i class="fa-solid fa-cart-shopping" />
+		</button>
+	</div>
 </nav>
 <slot />
 <footer>
-	<div class="py-4 mt-8 mx-4">
+	<div class="py-4 mx-4">
 		<p class="text-xl md:text-lg font-bold uppercase">©Neville Brem and William Tang</p>
-		<div class="flex w-16 justify-center mx-auto my-4 text-5xl md:4xl space-x-2">
-			<a
-				href="https://instagram.com/wolffebricks_official"
-				target="_blank"
-				rel="noreferrer noopener"
-			>
+		<div class="flex justify-center mx-auto my-4">
+			<a href="https://instagram.com/wolffebricks_official" target="_blank" class="h1 btn">
 				<i class="fa-brands fa-instagram-square" />
 			</a>
-			<a href="https://twitter.com/wolffe_bricks" target="_blank" rel="noreferrer noopener">
+			<a href="https://twitter.com/wolffe_bricks" target="_blank" class="h1 btn">
 				<i class="fa-brands fa-twitter-square" />
 			</a>
-			<a href="mailto:support@wolffebricks.store">
+			<a href="mailto:support@wolffebricks.store" class="h1 btn">
 				<i class="fa-solid fa-envelope-square" />
 			</a>
 		</div>
