@@ -23,4 +23,9 @@ interface Product {
     img_2: ImageUrl,
 }
 
+interface CartItem {
+  id: string,
+  quantity: number
+}
+
 declare type ImageUrl = string;
