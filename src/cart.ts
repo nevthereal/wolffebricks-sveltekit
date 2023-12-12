@@ -20,11 +20,11 @@ export const addToCart = (id: string) => {
 
 export const removeFromCart = (id: string) => {
 	let items = get(cartItems);
-	let itemPosition = items.findIndex((item) => {
-		return item.id === id;
-	});
+	let itemPosition = items.findIndex((item) => item.id === id);
 
-	cartItems.update(() => {
-		return items.splice(itemPosition, 1);
-	});
+	if (itemPosition !== -1) {
+		cartItems.update((cartItems) => {
+			return cartItems.filter((item) => item.id !== id);
+		});
+	}
 };
