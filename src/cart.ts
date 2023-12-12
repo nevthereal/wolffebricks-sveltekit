@@ -3,9 +3,8 @@ import { localStorageStore } from '@skeletonlabs/skeleton';
 
 export const cartItems: Writable<CartItem[]> = localStorageStore<CartItem[]>('cartItems', []);
 
-let items = get(cartItems);
-
 export const addToCart = (id: string) => {
+	let items = get(cartItems);
 	let itemPosition = items.findIndex((item) => {
 		return item.id === id;
 	});
@@ -20,6 +19,7 @@ export const addToCart = (id: string) => {
 };
 
 export const removeFromCart = (id: string) => {
+	let items = get(cartItems);
 	let itemPosition = items.findIndex((item) => {
 		return item.id === id;
 	});

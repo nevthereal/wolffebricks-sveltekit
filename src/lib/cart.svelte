@@ -1,6 +1,8 @@
 <script lang="ts">
 	import CartProduct from './cartProduct.svelte';
 	import { cartItems } from '../cart';
+
+	console.log($cartItems);
 </script>
 
 <div>
