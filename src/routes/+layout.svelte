@@ -52,24 +52,24 @@
 	<!-- Mobile: -->
 	<div class="flex justify-between p-4 md:hidden">
 		<button
-			class="hover:scale-105 active:scale-95 ease-in-out duration-200 my-auto"
+			class="active:scale-95 ease-in-out duration-200 my-auto h1"
 			on:click={() => triggerDrawer()}><i class="fa-solid fa-bars"></i></button
 		>
 		<button
-			class="hover:scale-105 active:scale-95 ease-in-out duration-200 my-auto"
+			class="active:scale-95 ease-in-out duration-200 my-auto h1"
 			on:click={() => triggerCart()}><i class="fa-solid fa-cart-shopping"></i></button
 		>
 	</div>
 	<!-- Desktop: -->
-	<div class="justify-between hidden md:flex p-2">
+	<div class="justify-between hidden md:flex p-4">
 		<a
 			href="/"
 			class="hover:scale-105 duration-200 h1 md:text-7xl my-auto active:scale-95 ease-in-out"
 		>
 			<i class="fa-brands fa-wolf-pack-battalion" />
 		</a>
-		<div class="text-lg md:text-xl flex my-auto gap-4">
-			<a href="/products" class="hover:scale-105 active:scale-95 ease-in-out0 font-bold"
+		<div class="text-lg md:text-xl flex my-auto gap-8">
+			<a href="/products" class="hover:scale-105 active:scale-95 ease-in-out duration-200 font-bold"
 				><h3 class="h3">Products</h3></a
 			>
 			<a href="/info" class="hover:scale-105 active:scale-95 ease-in-out font-bold duration-200"
@@ -77,7 +77,7 @@
 			>
 		</div>
 		<button
-			class="my-aut hover:scale-105 duration-200 h1 md:text-4xl active:scale-95 ease-in-out"
+			class="my-aut hover:scale-105 duration-200 h2 md:text-4xl active:scale-95 ease-in-out"
 			on:click={() => triggerCart()}
 		>
 			<i class="fa-solid fa-cart-shopping" />
