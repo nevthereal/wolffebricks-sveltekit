@@ -1,9 +1,18 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
-	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
+	import { Drawer, getDrawerStore, getModalStore, initializeStores } from '@skeletonlabs/skeleton';
+	import type {
+		DrawerSettings,
+		DrawerStore,
+		ModalSettings,
+		ModalStore
+	} from '@skeletonlabs/skeleton';
+	import { Modal } from '@skeletonlabs/skeleton';
+	import Cart from '$lib/cart.svelte';
 
 	initializeStores();
+
+	// nav
 	const drawerStore: DrawerStore = getDrawerStore();
 
 	const triggerDrawer = (): void => {
@@ -11,8 +20,14 @@
 		drawerStore.open(s);
 	};
 
+	// cart
+	const modalStore: ModalStore = getModalStore();
 	const triggerCart = (): void => {
-		console.log('Cart opens');
+		const modalSettings: ModalSettings = {
+			type: 'component',
+			component: { ref: Cart }
+		};
+		modalStore.trigger(modalSettings);
 	};
 </script>
 
@@ -31,31 +46,38 @@
 		</div>
 	{/if}
 </Drawer>
+<Modal />
 
 <nav>
 	<!-- Mobile: -->
 	<div class="flex justify-between p-4 md:hidden">
-		<button class="btn my-auto" on:click={() => triggerDrawer()}
-			><i class="fa-solid fa-bars"></i></button
+		<button
+			class="hover:scale-105 active:scale-95 ease-in-out duration-200 my-auto"
+			on:click={() => triggerDrawer()}><i class="fa-solid fa-bars"></i></button
 		>
-		<button class="btn my-auto" on:click={() => triggerCart()}
-			><i class="fa-solid fa-cart-shopping"></i></button
+		<button
+			class="hover:scale-105 active:scale-95 ease-in-out duration-200 my-auto"
+			on:click={() => triggerCart()}><i class="fa-solid fa-cart-shopping"></i></button
 		>
 	</div>
 	<!-- Desktop: -->
 	<div class="justify-between hidden md:flex p-2">
-		<a href="/" class="hover:scale-105 duration-200 h1 md:text-7xl my-auto btn">
+		<a
+			href="/"
+			class="hover:scale-105 duration-200 h1 md:text-7xl my-auto active:scale-95 ease-in-out"
+		>
 			<i class="fa-brands fa-wolf-pack-battalion" />
 		</a>
 		<div class="text-lg md:text-xl flex my-auto gap-4">
-			<a href="/products" class="btn font-bold hover:scale-105 duration-200"
+			<a href="/products" class="hover:scale-105 active:scale-95 ease-in-out0 font-bold"
 				><h3 class="h3">Products</h3></a
 			>
-			<a href="/info" class="btn font-bold hover:scale-105 duration-200"><h3 class="h3">Info</h3></a
+			<a href="/info" class="hover:scale-105 active:scale-95 ease-in-out font-bold duration-200"
+				><h3 class="h3">Info</h3></a
 			>
 		</div>
 		<button
-			class="my-aut hover:scale-105 duration-200 h1 md:text-4xl btn"
+			class="my-aut hover:scale-105 duration-200 h1 md:text-4xl active:scale-95 ease-in-out"
 			on:click={() => triggerCart()}
 		>
 			<i class="fa-solid fa-cart-shopping" />
