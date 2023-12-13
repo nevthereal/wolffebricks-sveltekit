@@ -4,14 +4,20 @@ This is probably one of the final versions of Wolffe Bricks. I found the framewo
 Porting this app to SvelteKit is a huge step in my development journey and I am glad I chose [Skeleton UI](https://skeleton.dev) to help me with that. \
 SvelteKit will not only allow me to bring the backend and frontend closer together, because it, is compared to React, a full-stack framework. SvelteKit's efficient routing system also comes in handy.
 
+&rarr; [Old Wolffe Bricks Repo](https://github.com/nevthereal/wolffebricks-v2) \
+&rarr; [Wolffe Bricks](https://wolffebricks.store)
+
 ## Technologies used
 - SvelteKit
 - TailwindCSS
 - Skeleton UI
 - Stripe
+- Supabase
+- Drizzle ORM
 
 ## Roadmap
 - [x] Misc
 - [x] Card Logic
-- [ ] Backend (API route)
-- [ ] Database (probably Supabase with Drizzle as ORM) for storing users (auth) and other page data
+- [ ] Backend (Stripe integration)
+- [ ] Auth (Supabase)
+- [ ] Database (Supabase with Drizzle ORM) for products, orders etc.
