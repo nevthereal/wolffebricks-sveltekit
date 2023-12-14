@@ -1,5 +1,6 @@
-import { writable, get, type Writable } from 'svelte/store';
+import { get, type Writable } from 'svelte/store';
 import { localStorageStore } from '@skeletonlabs/skeleton';
+import { getProductData } from './routes/products';
 
 export const cartItems: Writable<CartItem[]> = localStorageStore<CartItem[]>('cartItems', []);
 
@@ -19,6 +20,7 @@ export const addToCart = (id: string) => {
 };
 
 export const removeFromCart = (id: string) => {
+	console.log(getProductData(id).title);
 	let items = get(cartItems);
 	let itemPosition = items.findIndex((item) => item.id === id);
 
