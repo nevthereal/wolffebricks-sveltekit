@@ -1,6 +1,6 @@
-import { get, type Writable } from 'svelte/store';
+import { get, writable, type Writable } from 'svelte/store';
 import { localStorageStore } from '@skeletonlabs/skeleton';
-import { getProductData } from './routes/products';
+import { getProductData } from '../routes/products';
 
 export const cartItems: Writable<CartItem[]> = localStorageStore<CartItem[]>('cartItems', []);
 
@@ -20,7 +20,6 @@ export const addToCart = (id: string) => {
 };
 
 export const removeFromCart = (id: string) => {
-	console.log(getProductData(id).title);
 	let items = get(cartItems);
 	let itemPosition = items.findIndex((item) => item.id === id);
 
@@ -29,4 +28,18 @@ export const removeFromCart = (id: string) => {
 			return cartItems.filter((item) => item.id !== id);
 		});
 	}
+};
+
+export const getSubtotal: Writable<number> = (): number => {
+	let items = get(cartItems);
+	return items.reduce((total, item) => {
+		const productData = getProductData(item.id);
+
+		if (productData) {
+			const itemTotal = productData.price * item.quantity;
+			return total + itemTotal;
+		}
+
+		return total;
+	}, 0);
 };
