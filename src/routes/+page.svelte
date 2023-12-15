@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<title>Wolffe Bricks - Home</title>
+	<meta name="description" content="Wolffe Bricks - Custom LEGO Sets" />
 </svelte:head>
 
 <div class="text-center bg-no-repeat bg-center bg-cover w-full bg-white">
