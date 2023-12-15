@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import CartProduct from './cartProduct.svelte';
 	import { cartItems } from './cart';
-	import { writable } from 'svelte/store';
+	import { get, writable } from 'svelte/store';
 	import { getProductData } from './products';
 	import type { CartItem } from '../app';
 
@@ -20,6 +21,22 @@
 	};
 
 	$: getSubtotal($cartItems);
+
+	const checkout = async () => {
+		await fetch(`${$page.url.origin}/api/checkout`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ items: get(cartItems) })
+		})
+			.then((data) => {
+				return data.json();
+			})
+			.then((data) => {
+				window.location.replace(data.url);
+			});
+	};
 </script>
 
 <div class="bg-surface-100-800-token card p-8 w-[90%] max-h-[70dvh] relative">
@@ -30,8 +47,7 @@
 		{/each}
 	</div>
 	<p>Subtotal: {$subtotal}</p>
-	<button
-		class="btn variant-ghost-primary mt-4 h3 font-bold"
-		on:click={() => console.log('Checkout')}>Check out</button
+	<button class="btn variant-ghost-primary mt-4 h3 font-bold" on:click={() => checkout()}
+		>Check out</button
 	>
 </div>
