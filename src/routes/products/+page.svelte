@@ -3,6 +3,10 @@
 	import { products } from '../../lib/products';
 </script>
 
+<svelte:head>
+	<title>Wolffe Bricks - Products</title>
+</svelte:head>
+
 <div>
 	<h1 class="h1 font-black uppercase my-16">Products</h1>
 	<div class="flex">

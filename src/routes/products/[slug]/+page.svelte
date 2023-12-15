@@ -10,6 +10,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Wolffe Bricks - {product?.title}</title>
+	<meta name="description" content={product?.description} />
+</svelte:head>
+
 <div class="mx-4">
 	<div class="md:grid m-4 md:grid-cols-2">
 		<img src={product?.img_main} alt="" class="mx-auto rounded-xl" />

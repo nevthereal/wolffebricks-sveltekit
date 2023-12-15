@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Wolffe Bricks - Info</title>
+</svelte:head>
+
 <div class="md:max-w-[50%] mx-auto">
 	<h1 class="h1 font-black uppercase my-16">Info</h1>
 	<div class="my-6">

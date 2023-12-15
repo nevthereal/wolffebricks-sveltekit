@@ -3,6 +3,10 @@
 	import { products } from '../lib/products';
 </script>
 
+<svelte:head>
+	<title>Wolffe Bricks - Home</title>
+</svelte:head>
+
 <div class="text-center bg-no-repeat bg-center bg-cover w-full bg-white">
 	<div class="w-full h-screen bg-gray-800/25 dark:bg-black/70 flex">
 		<div class="font-black text-white bg-cover w-full my-auto">
