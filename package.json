@@ -43,6 +43,9 @@
   },
   "type": "module",
   "dependencies": {
-    "@floating-ui/dom": "1.5.3"
+    "@floating-ui/dom": "1.5.3",
+    "@supabase/auth-helpers-sveltekit": "^0.10.7",
+    "@supabase/ssr": "^0.0.10",
+    "@supabase/supabase-js": "^2.39.0"
   }
 }
