@@ -30,15 +30,3 @@ interface CartItem {
 }
 
 declare type ImageUrl = string;
-
-declare global {
-	namespace App {
-		interface Locals {
-			supabase: SupabaseClient;
-			getSession(): Promise<Session | null>;
-		}
-		interface PageData {
-			session: Session | null;
-		}
-	}
-}

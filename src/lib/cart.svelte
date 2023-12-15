@@ -1,12 +1,14 @@
 <script lang="ts">
 	import CartProduct from './cartProduct.svelte';
 	import { cartItems } from './cart';
-	import { get, writable, type Writable } from 'svelte/store';
+	import { writable } from 'svelte/store';
 	import { getProductData } from './products';
+	import type { CartItem } from '../app';
+
 	let subtotal = writable(0);
-	const getSubtotal = () => {
+	const getSubtotal = (items: CartItem[]) => {
 		let total = 0;
-		$cartItems.forEach((item) => {
+		items.forEach((item) => {
 			if (item && item.id) {
 				const productData = getProductData(item.id);
 				if (productData) {
@@ -17,7 +19,7 @@
 		subtotal.set(total);
 	};
 
-	$: getSubtotal();
+	$: getSubtotal($cartItems);
 </script>
 
 <div class="bg-surface-100-800-token card p-8 w-[90%] max-h-[70dvh] relative">
