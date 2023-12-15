@@ -9,6 +9,8 @@
 	} from '@skeletonlabs/skeleton';
 	import { Modal } from '@skeletonlabs/skeleton';
 	import Cart from '$lib/cart.svelte';
+	import { onMount } from 'svelte';
+	import { invalidate } from '$app/navigation';
 
 	initializeStores();
 
@@ -29,6 +31,20 @@
 		};
 		modalStore.trigger(modalSettings);
 	};
+
+	export let data;
+
+	let { supabase, session } = data;
+	$: ({ supabase, session } = data);
+
+	onMount(() => {
+		const { data } = supabase.auth.onAuthStateChange((event, _session) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth');
+			}
+		});
+		return () => data.subscription.unsubscribe();
+	});
 </script>
 
 <Drawer>
@@ -84,7 +100,11 @@
 		</button>
 	</div>
 </nav>
+
+<!-- Content: -->
 <slot />
+
+<!-- Footer: -->
 <footer>
 	<div class="py-4 mx-4">
 		<p class="text-xl md:text-lg font-bold uppercase">©Neville Brem and William Tang</p>
