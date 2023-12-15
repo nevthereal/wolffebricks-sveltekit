@@ -29,17 +29,3 @@ export const removeFromCart = (id: string) => {
 		});
 	}
 };
-
-export const getSubtotal: Writable<number> = (): number => {
-	let items = get(cartItems);
-	return items.reduce((total, item) => {
-		const productData = getProductData(item.id);
-
-		if (productData) {
-			const itemTotal = productData.price * item.quantity;
-			return total + itemTotal;
-		}
-
-		return total;
-	}, 0);
-};
