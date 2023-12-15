@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getProductPage } from '../../products';
+	import { getProductPage } from '../../../lib/products';
 	import { page } from '$app/stores';
 	import { error } from '@sveltejs/kit';
 	import { addToCart, cartItems } from '../../../lib/cart';

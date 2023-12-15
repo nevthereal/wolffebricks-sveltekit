@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Panel from '$lib/panel.svelte';
-	import { products } from './products';
+	import { products } from '../lib/products';
 </script>
 
 <div class="text-center bg-no-repeat bg-center bg-cover w-full bg-white">

@@ -2,8 +2,7 @@
 	import CartProduct from './cartProduct.svelte';
 	import { cartItems } from './cart';
 	import { get, writable, type Writable } from 'svelte/store';
-	import { getProductData } from '../routes/products';
-
+	import { getProductData } from './products';
 	let subtotal = writable(0);
 	const getSubtotal = () => {
 		let total = 0;
