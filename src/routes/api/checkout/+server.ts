@@ -2,8 +2,7 @@ import type { RequestHandler } from './$types';
 import Stripe from 'stripe';
 import type { CartItem } from '../../../app';
 
-const stripe_key = import.meta.env.VITE_STRIPE_API_KEY;
-const stripe = new Stripe(stripe_key, {
+const stripe = new Stripe(import.meta.env.VITE_STRIPE_API_KEY, {
 	apiVersion: '2023-10-16'
 });
 

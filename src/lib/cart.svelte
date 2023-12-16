@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import CartProduct from './cartProduct.svelte';
-	import { cartItems } from './cart';
+	import { cartItems, clearCart } from './cart';
 	import { get, writable } from 'svelte/store';
 	import { getProductData } from './products';
 	import type { CartItem } from '../app';
@@ -34,6 +34,7 @@
 				return data.json();
 			})
 			.then((data) => {
+				clearCart();
 				window.location.replace(data.url);
 			});
 	};
@@ -41,13 +42,19 @@
 
 <div class="bg-surface-100-800-token card p-8 w-[90%] max-h-[70dvh] relative">
 	<h1 class="h1 font-black mb-4">Your Cart:</h1>
-	<div class="overflow-auto max-h-[40dvh]">
-		{#each $cartItems as item}
-			<CartProduct itemId={item.id} />
-		{/each}
-	</div>
-	<p>Subtotal: {$subtotal}</p>
-	<button class="btn variant-ghost-primary mt-4 h3 font-bold" on:click={() => checkout()}
-		>Check out</button
-	>
+	{#if $cartItems.length > 0}
+		<div class="overflow-auto max-h-[40dvh]">
+			{#each $cartItems as item (item.id)}
+				<CartProduct itemId={item.id} />
+			{/each}
+		</div>
+		{#if $subtotal > 0}
+			<p>Subtotal: CHF {$subtotal.toFixed(2)}</p>
+			<button class="btn variant-ghost-primary mt-4 h3 font-bold" on:click={() => checkout()}
+				>Check out</button
+			>
+		{/if}
+	{:else if $cartItems.length === 0}
+		<p>Your cart is empty</p>
+	{/if}
 </div>

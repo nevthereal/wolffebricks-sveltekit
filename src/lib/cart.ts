@@ -29,3 +29,6 @@ export const removeFromCart = (id: string) => {
 		});
 	}
 };
+export const clearCart = () => {
+	cartItems.set([]);
+};
