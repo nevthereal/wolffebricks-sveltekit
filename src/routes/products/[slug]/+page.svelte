@@ -8,7 +8,7 @@
 
 	let product = getProductPage($page.params.slug)!;
 	if (product === undefined) {
-		throw error(404, 'Product not found');
+		error(404, 'Product not found');
 	}
 
 	let inCart = writable(false);

@@ -9,7 +9,7 @@
 	let checkoutSession: CheckoutSession | undefined;
 
 	if (sessionId == undefined) {
-		throw error(404, 'No order provided');
+		error(404, 'No order provided');
 	}
 
 	onMount(() => {
