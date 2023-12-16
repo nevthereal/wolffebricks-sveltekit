@@ -9,7 +9,7 @@
 </svelte:head>
 
 <div class="text-center bg-no-repeat bg-center bg-cover w-full bg-white">
-	<div class="w-full h-screen bg-gray-800/25 dark:bg-black/70 flex">
+	<div id="hero" class="w-full h-screen bg-gray-800/25 dark:bg-black/70 flex">
 		<div class="font-black text-white bg-cover w-full my-auto">
 			<h1 class="uppercase h1">Wolffe Bricks</h1>
 			<h2 class="text-base md:text-lg tracking-wider my-4 h2">LEGO® MOCs from Switzerland!</h2>
@@ -24,7 +24,7 @@
 	</div>
 </div>
 <div id="featured">
-	<h2 class="h2 font-bold my-4">Featured Products:</h2>
+	<h2 class="h2 font-bold mb-4 mt-16">Featured Products:</h2>
 	<div class="flex justify-center gap-4 flex-wrap px-4">
 		<Panel product={products[2]} />
 		<Panel product={products[3]} />

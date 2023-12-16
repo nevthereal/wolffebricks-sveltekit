@@ -11,6 +11,7 @@
 	import Cart from '$lib/cart.svelte';
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
+	import logo from '$lib/img/wb_logo.png';
 
 	initializeStores();
 
@@ -64,11 +65,8 @@
 	</div>
 	<!-- Desktop: -->
 	<div class="justify-between hidden md:flex p-4">
-		<a
-			href="/"
-			class="hover:scale-105 duration-200 h1 md:text-7xl my-auto active:scale-95 ease-in-out"
-		>
-			<i class="fa-brands fa-wolf-pack-battalion" />
+		<a href="/">
+			<img src={logo} alt="logo" loading="eager" class="btn w-32 p-2" />
 		</a>
 		<div class="text-lg md:text-xl flex my-auto gap-8">
 			<a href="/products" class="hover:scale-105 active:scale-95 ease-in-out duration-200 font-bold"
