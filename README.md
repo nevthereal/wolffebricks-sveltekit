@@ -18,6 +18,6 @@ SvelteKit will not only allow me to bring the backend and frontend closer togeth
 ## Roadmap
 - [x] Misc
 - [x] Card Logic
-- [ ] Backend (Stripe integration)
+- [x] Backend (Stripe integration)
 - [ ] Auth (Supabase)
 - [ ] Database (Supabase with Drizzle ORM) for products, orders etc.
