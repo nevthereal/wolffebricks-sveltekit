@@ -38,16 +38,13 @@
 			</p>
 			{#if $inCart}
 				<button
-					class="font-bold btn variant-ghost-primary"
+					class="font-bold btn variant-ghost-error"
 					on:click={() => removeFromCart(product.id)}
 				>
 					Remove From Cart
 				</button>
 			{:else}
-				<button
-					class="font-bold btn variant-ghost-secondary"
-					on:click={() => addToCart(product.id)}
-				>
+				<button class="font-bold btn variant-ghost-success" on:click={() => addToCart(product.id)}>
 					CHF {product.price.toFixed(2)} - Add to cart
 				</button>
 			{/if}

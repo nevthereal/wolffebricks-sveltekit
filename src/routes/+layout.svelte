@@ -1,17 +1,25 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { Drawer, getDrawerStore, getModalStore, initializeStores } from '@skeletonlabs/skeleton';
+	import {
+		Drawer,
+		getDrawerStore,
+		getModalStore,
+		getToastStore,
+		initializeStores
+	} from '@skeletonlabs/skeleton';
 	import type {
 		DrawerSettings,
 		DrawerStore,
 		ModalSettings,
-		ModalStore
+		ModalStore,
+		ToastSettings,
+		ToastStore
 	} from '@skeletonlabs/skeleton';
-	import { Modal } from '@skeletonlabs/skeleton';
+	import { Modal, Toast } from '@skeletonlabs/skeleton';
 	import Cart from '$lib/cart.svelte';
-	import { onMount } from 'svelte';
-	import { invalidate } from '$app/navigation';
 	import logo from '$lib/img/wb_logo.png';
+	import type { CartItem } from '../app';
+	import { getProductData } from '$lib/products';
 
 	initializeStores();
 
@@ -32,6 +40,16 @@
 		};
 		modalStore.trigger(modalSettings);
 	};
+
+	// cart toasts
+	const toastStore: ToastStore = getToastStore();
+	export const triggerToast = (id: string, action: string) => {
+		const item = getProductData(id)?.title;
+		const t: ToastSettings = {
+			message: `${item} was ${action} cart}`
+		};
+		toastStore.trigger(t);
+	};
 </script>
 
 <Drawer>
@@ -50,6 +68,7 @@
 	{/if}
 </Drawer>
 <Modal />
+<Toast />
 
 <nav>
 	<!-- Mobile: -->
