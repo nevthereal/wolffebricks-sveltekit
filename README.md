@@ -1,23 +1,38 @@
-# Wolffe Bricks
-## About this repository
-This is probably one of the final versions of Wolffe Bricks. I found the framework which I will probably use in the future: [**SvelteKit**](https://kit.svelte.dev). \
-Porting this app to SvelteKit is a huge step in my development journey and I am glad I chose [Skeleton UI](https://skeleton.dev) to help me with that. \
-SvelteKit will not only allow me to bring the backend and frontend closer together, because it, is compared to React, a full-stack framework. SvelteKit's efficient routing system also comes in handy.
+# create-svelte
 
-&rarr; [Old Wolffe Bricks Repo](https://github.com/nevthereal/wolffebricks-v2) \
-&rarr; [Wolffe Bricks](https://wolffebricks.store)
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Technologies used
-- SvelteKit
-- TailwindCSS
-- Skeleton UI
-- Stripe
-- Supabase
-- Drizzle ORM
+## Creating a project
 
-## Roadmap
-- [x] Misc
-- [x] Card Logic
-- [ ] Backend (Stripe integration)
-- [ ] Auth (Supabase)
-- [ ] Database (Supabase with Drizzle ORM) for products, orders etc.
+If you're seeing this, you've probably already done this step. Congrats!
+
+```bash
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+```
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

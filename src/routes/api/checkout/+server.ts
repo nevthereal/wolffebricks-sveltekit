@@ -28,10 +28,6 @@ export const POST: RequestHandler = async ({ request }) => {
 		lineItems.push({ price: price, quantity: item.quantity });
 	}
 
-	console.log(items);
-
-	console.log(lineItems);
-
 	const session = await stripe.checkout.sessions.create({
 		line_items: lineItems,
 		mode: 'payment',
