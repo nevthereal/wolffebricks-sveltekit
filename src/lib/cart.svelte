@@ -22,7 +22,10 @@
 
 	$: getSubtotal($cartItems);
 
+	let loading = false;
+
 	const checkout = async () => {
+		loading = true;
 		await fetch(`${$page.url.origin}/api/checkout`, {
 			method: 'POST',
 			headers: {
@@ -51,7 +54,11 @@
 		{#if $subtotal > 0}
 			<p>Subtotal: CHF {$subtotal.toFixed(2)}</p>
 			<button class="btn variant-ghost-primary mt-4 h3 font-bold" on:click={() => checkout()}
-				>Check out</button
+				>{#if !loading}
+					Check Out
+				{:else}
+					Loading ...
+				{/if}</button
 			>
 		{/if}
 	{:else if $cartItems.length === 0}
