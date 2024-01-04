@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { focusTrap } from '@skeletonlabs/skeleton';
-	import { removeFromCart } from './cart';
-	import { getProductData } from './products';
+	import { removeFromCart } from '../cart';
+	import { getProductData } from '../products';
 
 	export let itemId: string;
 

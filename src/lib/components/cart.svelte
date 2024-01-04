@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import CartProduct from './cartProduct.svelte';
-	import { cartItems, clearCart } from './cart';
+	import { cartItems, clearCart } from '../cart';
 	import { get, writable } from 'svelte/store';
-	import { getProductData } from './products';
-	import type { CartItem } from '../app';
+	import { getProductData } from '../products';
+	import type { CartItem } from '../../app';
 
 	let subtotal = writable(0);
 	const getSubtotal = (items: CartItem[]) => {
@@ -26,7 +26,7 @@
 
 	const checkout = async () => {
 		loading = true;
-		await fetch(`${$page.url.origin}/api/checkout`, {
+		await fetch(`${$page.url.origin}/checkout`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

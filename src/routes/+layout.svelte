@@ -14,7 +14,7 @@
 		ModalStore
 	} from '@skeletonlabs/skeleton';
 	import { Modal, Toast } from '@skeletonlabs/skeleton';
-	import Cart from '$lib/cart.svelte';
+	import Cart from '$lib/components/cart.svelte';
 	import logo from '$lib/img/wb_logo.png';
 	import type { CartItem } from '../app';
 	import { getProductData } from '$lib/products';

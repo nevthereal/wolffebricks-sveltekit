@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import Stripe from 'stripe';
-import type { CartItem } from '../../../app';
+import type { CartItem } from '../../app';
 
 const stripe = new Stripe(import.meta.env.VITE_STRIPE_API_KEY, {
 	apiVersion: '2023-10-16'

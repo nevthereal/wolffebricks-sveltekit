@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Panel from '$lib/panel.svelte';
+	import Panel from '$lib/components/panel.svelte';
 	import { products } from '../../lib/products';
 </script>
 

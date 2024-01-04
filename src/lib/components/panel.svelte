@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Product } from '../app';
+	import type { Product } from '../../app';
 
 	export let product: Product;
 </script>

@@ -1,31 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import type { CheckoutSession } from '../../app';
-	import { error } from '@sveltejs/kit';
+	import Stripe from 'stripe';
 
-	let sessionId = $page.url.searchParams.get('id');
+	export let data;
 
-	let checkoutSession: CheckoutSession | undefined;
-
-	if (sessionId == undefined) {
-		error(404, 'No order provided');
-	}
-
-	onMount(() => {
-		if (sessionId) {
-			fetch(`${$page.url.origin}/api/order?id=${sessionId}`)
-				.then((data) => {
-					return data.json();
-				})
-				.then((data) => {
-					checkoutSession = data.session;
-				})
-				.catch(() => {
-					checkoutSession = undefined;
-				});
-		}
-	});
+	let checkoutSession = data.checkoutSession;
 </script>
 
 <div class="flex justify-center items-center">
@@ -36,7 +14,7 @@
 				<h3 class="h3 font-bold">Summary:</h3>
 				<p>
 					Thank you for your order, <span class="font-bold"
-						>{checkoutSession.customer_details.name}</span
+						>{checkoutSession.customer_details?.name}</span
 					><br />
 					Your checkout session ID: <span class="font-bold">{checkoutSession.id}</span>
 				</p>
@@ -44,30 +22,32 @@
 			<div class="mt-4">
 				<h3 class="h3 font-bold">Your order:</h3>
 				<ol class="list-decimal list-inside">
-					{#each checkoutSession.line_items.data as item}
-						<li>
-							<span class="font-bold">{item.description}</span> - Price: {(
-								item.amount_subtotal /
-								item.quantity /
-								100
-							).toFixed(2)} CHF
-						</li>
-					{/each}
+					{#if checkoutSession.line_items?.data}
+						{#each checkoutSession.line_items.data as item}
+							<li>
+								<span class="font-bold">{item?.description}</span> - Price: {(
+									item?.amount_subtotal /
+									(item?.quantity ?? 1) /
+									100
+								).toFixed(2)} CHF
+							</li>
+						{/each}
+					{/if}
 				</ol>
 				<div class="mt-2">
 					<p>
 						Subtotal:
-						{(checkoutSession.amount_subtotal / 100).toFixed(2)} CHF
+						{((checkoutSession.amount_subtotal ?? 0) / 100).toFixed(2)} CHF
 					</p>
 					<p>
 						Total (including coupons & taxes):
-						{(checkoutSession.amount_total / 100).toFixed(2)} CHF
+						{((checkoutSession.amount_total ?? 0) / 100).toFixed(2)} CHF
 					</p>
 				</div>
 			</div>
 			<p class="mt-4">
 				You will soon get an email with your oders to <span class="font-bold"
-					>{checkoutSession.customer_details.email}</span
+					>{checkoutSession.customer_details?.email}</span
 				>
 			</p>
 		{:else}
