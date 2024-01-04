@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 	import { error } from '@sveltejs/kit';
 	import { addToCart, cartItems, removeFromCart } from '../../../lib/cart';
-	import type { CartItem } from '../../../app';
 	import { writable } from 'svelte/store';
 
 	let product = getProductPage($page.params.slug)!;

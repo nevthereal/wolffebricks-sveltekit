@@ -1,17 +1,9 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 
-import type { SupabaseClient, Session } from '@supabase/supabase-js';
-
 // and what to do when importing types
-declare namespace App {
-	// interface Locals {}
-	// interface PageData {}
-	// interface Error {}
-	// interface Platform {}
-}
 
-interface Product {
+declare interface Product {
 	id: string;
 	slug: string;
 	title: string;
@@ -24,7 +16,7 @@ interface Product {
 	img_2: ImageUrl;
 }
 
-interface CartItem {
+declare interface CartItem {
 	id: string;
 	quantity: number;
 }

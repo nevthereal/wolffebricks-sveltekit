@@ -4,7 +4,6 @@
 	import { cartItems, clearCart } from '../cart';
 	import { get, writable } from 'svelte/store';
 	import { getProductData } from '../products';
-	import type { CartItem } from '../../app';
 
 	let subtotal = writable(0);
 	const getSubtotal = (items: CartItem[]) => {

@@ -1,6 +1,5 @@
 import { get, type Writable } from 'svelte/store';
 import { localStorageStore } from '@skeletonlabs/skeleton';
-import type { CartItem } from '../app';
 
 export const cartItems: Writable<CartItem[]> = localStorageStore<CartItem[]>('cartItems', []);
 
