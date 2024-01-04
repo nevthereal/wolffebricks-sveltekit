@@ -11,9 +11,7 @@
 		DrawerSettings,
 		DrawerStore,
 		ModalSettings,
-		ModalStore,
-		ToastSettings,
-		ToastStore
+		ModalStore
 	} from '@skeletonlabs/skeleton';
 	import { Modal, Toast } from '@skeletonlabs/skeleton';
 	import Cart from '$lib/cart.svelte';
@@ -41,15 +39,7 @@
 		modalStore.trigger(modalSettings);
 	};
 
-	// cart toasts
-	const toastStore: ToastStore = getToastStore();
-	export const triggerToast = (id: string, action: string) => {
-		const item = getProductData(id)?.title;
-		const t: ToastSettings = {
-			message: `${item} was ${action} cart}`
-		};
-		toastStore.trigger(t);
-	};
+	export const _toastStore = getToastStore();
 </script>
 
 <Drawer>

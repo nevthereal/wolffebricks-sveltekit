@@ -15,13 +15,14 @@ SvelteKit will not only allow me to bring the backend and frontend closer togeth
 - TailwindCSS
 - Skeleton UI
 - Stripe
-- Supabase
 - Drizzle ORM
+- Turso
+- Lucia Auth
 
 ## Roadmap
 
 - [x] Misc
-- [x] Card Logic
+- [x] Cart Logic
 - [x] Backend (Stripe integration)
-- [ ] Auth (Supabase)
-- [ ] Database (Supabase with Drizzle ORM) for products, orders etc.
+- [ ] Auth (Lucia + Drizzle + Turso)
+- [ ] Database (Turso + Drizzle) for products, orders etc.

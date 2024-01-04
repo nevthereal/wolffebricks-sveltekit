@@ -1,7 +1,6 @@
 import { get, type Writable } from 'svelte/store';
 import { localStorageStore } from '@skeletonlabs/skeleton';
 import type { CartItem } from '../app';
-import triggerToast from '../routes/+layout.svelte';
 
 export const cartItems: Writable<CartItem[]> = localStorageStore<CartItem[]>('cartItems', []);
 
@@ -18,7 +17,6 @@ export const addToCart = (id: string) => {
 	} else {
 		return items;
 	}
-	triggerToast('added to');
 };
 
 export const removeFromCart = (id: string) => {
