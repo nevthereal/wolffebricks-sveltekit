@@ -17,6 +17,7 @@
 	import Cart from '$lib/components/cart.svelte';
 	import logo from '$lib/img/wb_logo.png';
 	import { getProductData } from '$lib/products';
+	import { draw } from 'svelte/transition';
 
 	initializeStores();
 
@@ -24,7 +25,13 @@
 	const drawerStore: DrawerStore = getDrawerStore();
 
 	const triggerDrawer = (): void => {
-		const s: DrawerSettings = { id: 'nav', position: 'top', height: 'h-auto' };
+		const s: DrawerSettings = {
+			id: 'nav',
+			position: 'top',
+			height: 'h-auto',
+			rounded: 'rounded-none',
+			bgDrawer: 'bg-surface-900'
+		};
 		drawerStore.open(s);
 	};
 
@@ -41,17 +48,10 @@
 
 <Drawer>
 	{#if $drawerStore.id === 'nav'}
-		<div class="p-6">
-			<a href="/" on:click={() => drawerStore.close()}
-				><h1 class="h1 font-black">Wolffe Bricks</h1></a
-			>
-			<ul class="my-6 text-left w-[75%] mx-auto grid grid-cols-2">
-				<a href="/products" class="anchor h3 mx-auto" on:click={() => drawerStore.close()}
-					>Products</a
-				>
-				<a href="/info" class="anchor h3 mx-auto" on:click={() => drawerStore.close()}>Info</a>
-			</ul>
-		</div>
+		<ul class="m-8 flex justify-center items-center gap-6 h1 font-bold">
+			<a href="/products" on:click={() => drawerStore.close()}>Products</a>
+			<a href="/info" on:click={() => drawerStore.close()}>Info</a>
+		</ul>
 	{/if}
 </Drawer>
 <Modal />
@@ -59,11 +59,12 @@
 
 <nav>
 	<!-- Mobile: -->
-	<div class="flex justify-between p-4 md:hidden">
+	<div class="flex justify-between px-4 py-8 md:hidden items-center">
 		<button
 			class="active:scale-95 ease-in-out duration-200 my-auto h1"
 			on:click={() => triggerDrawer()}><i class="fa-solid fa-bars"></i></button
 		>
+		<a href="/"><h1 class="h1 font-black">Wolffe Bricks</h1></a>
 		<button
 			class="active:scale-95 ease-in-out duration-200 my-auto h1"
 			on:click={() => triggerCart()}><i class="fa-solid fa-cart-shopping"></i></button
