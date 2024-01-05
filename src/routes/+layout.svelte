@@ -16,8 +16,6 @@
 	import { Modal, Toast } from '@skeletonlabs/skeleton';
 	import Cart from '$lib/components/cart.svelte';
 	import logo from '$lib/img/wb_logo.png';
-	import { getProductData } from '$lib/products';
-	import { draw } from 'svelte/transition';
 
 	initializeStores();
 
