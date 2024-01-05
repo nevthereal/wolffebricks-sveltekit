@@ -1,15 +1,15 @@
 # Wolffe Bricks
 
-## About this repository
+## ℹ️ About this repository
 
 This is probably one of the final versions of Wolffe Bricks. I found the framework which I will probably use in the future: [**SvelteKit**](https://kit.svelte.dev). \
 Porting this app to SvelteKit is a huge step in my development journey and I am glad I chose [Skeleton UI](https://skeleton.dev) to help me with that. \
 SvelteKit will not only allow me to bring the backend and frontend closer together, because it, is compared to React, a full-stack framework. SvelteKit's efficient routing system also comes in handy.
 
-&rarr; [Old Wolffe Bricks Repo](https://github.com/nevthereal/wolffebricks-v2) \
-&rarr; [Wolffe Bricks](https://wolffebricks.store)
+➡️ [Old Wolffe Bricks Repo](https://github.com/nevthereal/wolffebricks-v2) \
+➡️ [Wolffe Bricks](https://wolffebricks.store)
 
-## Technologies used
+## 💼 Technologies used
 
 - SvelteKit
 - TailwindCSS
@@ -19,7 +19,7 @@ SvelteKit will not only allow me to bring the backend and frontend closer togeth
 - Turso
 - Lucia Auth
 
-## Roadmap
+## 📃 Roadmap
 
 - [x] Misc
 - [x] Cart Logic
