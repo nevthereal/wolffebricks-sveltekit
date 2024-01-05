@@ -14,7 +14,7 @@
 			<h1 class="uppercase h1">Wolffe Bricks</h1>
 			<h2 class="text-base md:text-lg tracking-wider my-4 h2">LEGO® MOCs from Switzerland!</h2>
 			<div
-				class="card variant-glass-warning w-fit mx-auto max-w-[90%] md:max-w-[70%] my-8 p-6 rounded-2xl"
+				class="card variant-glass-warning w-fit mx-auto max-w-[90%] md:max-w-[70%] my-8 p-6 rounded-token"
 			>
 				<h2 class="text-2xl">We're Back!</h2>
 				<p class="font-semibold">

@@ -13,8 +13,8 @@
 </script>
 
 <div class="flex justify-between card p-4 my-2">
-	<div class="flex gap-8">
-		<img src={item.img_main} alt={item.title} class="h-24 rounded-2xl" />
+	<div class="flex gap-8 items-center">
+		<img src={item.img_main} alt={item.title} class="h-24 rounded-token hidden md:block" />
 		<div class="my-auto text-left">
 			<h3 class="h3 my-auto font-bold">{item.title}</h3>
 			<h4 class="h4">CHF {item.price}</h4>

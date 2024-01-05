@@ -26,7 +26,7 @@
 
 <div class="mx-4">
 	<div class="md:grid m-4 md:grid-cols-2">
-		<img src={product.img_main} alt="" class="mx-auto rounded-xl" />
+		<img src={product.img_main} alt="" class="mx-auto rounded-token" />
 		<div class="my-auto">
 			<h1 class="font-bold h1 m-6">{product.title}</h1>
 			<h2 class="h2 font-bold">Short description:</h2>
@@ -51,8 +51,8 @@
 	</div>
 	<h2 class="h2 font-bold mb-4">Gallery:</h2>
 	<div class="flex justify-center flex-wrap gap-4 w-full">
-		<img class="md:w-[480px] rounded-xl" src={product.img_main} alt="" />
-		<img class="md:w-[480px] rounded-xl" src={product.img_1} alt="" />
-		<img class="md:w-[480px] rounded-xl" src={product.img_2} alt="" />
+		<img class="md:w-[480px] rounded-token" src={product.img_main} alt="" />
+		<img class="md:w-[480px] rounded-token" src={product.img_1} alt="" />
+		<img class="md:w-[480px] rounded-token" src={product.img_2} alt="" />
 	</div>
 </div>
