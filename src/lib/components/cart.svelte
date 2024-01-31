@@ -4,6 +4,9 @@
 	import { cartItems, clearCart } from '../cart';
 	import { get, writable } from 'svelte/store';
 	import { getProductData } from '../products';
+	import type { CssClasses } from '@skeletonlabs/skeleton';
+
+	export let classes: CssClasses = '';
 
 	let subtotal = writable(0);
 	const getSubtotal = (items: CartItem[]) => {
@@ -42,7 +45,7 @@
 	};
 </script>
 
-<div class="bg-surface-100-800-token card p-8 w-[90%] max-h-[70dvh] relative">
+<div class={classes}>
 	<h1 class="h1 font-black mb-4">Your Cart:</h1>
 	{#if $cartItems.length > 0}
 		<div class="overflow-auto max-h-[40dvh]">

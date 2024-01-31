@@ -16,6 +16,7 @@
 	import { Modal, Toast } from '@skeletonlabs/skeleton';
 	import Cart from '$lib/components/cart.svelte';
 	import logo from '$lib/img/wb_logo.png';
+	import { pushState } from '$app/navigation';
 
 	initializeStores();
 
@@ -38,8 +39,9 @@
 	const triggerCart = (): void => {
 		const modalSettings: ModalSettings = {
 			type: 'component',
-			component: { ref: Cart }
+			component: { ref: Cart, props: { classes: 'card p-8 w-[90%] max-h-[70dvh] relative' } }
 		};
+		pushState('/cart', {});
 		modalStore.trigger(modalSettings);
 	};
 </script>
