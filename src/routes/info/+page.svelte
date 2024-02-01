@@ -45,7 +45,7 @@
 				<i class="fa-brands fa-cc-discover" />
 			</li>
 			<li>
-				<i class="fa-brands fa-cc-dinersclub" />
+				<i class="fa-brands fa-cc-diners-club" />
 			</li>
 			<li>
 				<i class="fa-brands fa-cc-jcb" />
