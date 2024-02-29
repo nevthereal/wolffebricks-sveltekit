@@ -14,7 +14,7 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"generate": "drizzle-kit generate:sqlite",
-		"migrate": "drizzle-kit push:sqlit",
+		"migrate": "drizzle-kit push:sqlite",
 		"studio": "drizzle-kit studio"
 	},
 	"devDependencies": {
