@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { getProductPage } from '../../../lib/products';
+	import { getProductPage } from '$lib/cart/products';
 	import { page } from '$app/stores';
 	import { error } from '@sveltejs/kit';
-	import { addToCart, cartItems, removeFromCart } from '../../../lib/cart';
+	import { addToCart, cartItems, removeFromCart } from '$lib/cart/cart';
 	import { writable } from 'svelte/store';
 
 	let product = getProductPage($page.params.slug)!;

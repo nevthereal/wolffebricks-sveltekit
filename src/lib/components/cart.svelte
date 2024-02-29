@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import CartProduct from './cartProduct.svelte';
-	import { cartItems, clearCart } from '../cart';
+	import { cartItems, clearCart } from '../cart/cart';
 	import { get, writable } from 'svelte/store';
-	import { getProductData } from '../products';
+	import { getProductData } from '../cart/products';
 	import type { CssClasses } from '@skeletonlabs/skeleton';
 
 	export let classes: CssClasses = '';

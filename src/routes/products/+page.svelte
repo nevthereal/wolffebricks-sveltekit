@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Panel from '$lib/components/panel.svelte';
-	import { products } from '../../lib/products';
+	import { products } from '$lib/cart/products';
 </script>
 
 <svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { removeFromCart } from '../cart';
-	import { getProductData } from '../products';
+	import { removeFromCart } from '../cart/cart';
+	import { getProductData } from '../cart/products';
 
 	export let itemId: string;
 

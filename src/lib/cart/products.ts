@@ -115,7 +115,7 @@ export const products = [
 ];
 
 export function getProductData(id: string) {
-	let productData = products.find((product) => product.id === id);
+	const productData = products.find((product) => product.id === id);
 
 	if (productData == undefined) {
 		return undefined;
@@ -125,7 +125,7 @@ export function getProductData(id: string) {
 }
 
 export function getProductPage(slug: string) {
-	let productData = products.find((product) => product.slug === slug);
+	const productData = products.find((product) => product.slug === slug);
 
 	if (productData == undefined) {
 		return undefined;
