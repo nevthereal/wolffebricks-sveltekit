@@ -30,12 +30,15 @@
 
 	const checkout = async () => {
 		loading = true;
+
+		if (!user) return;
+
 		await fetch(`${$page.url.origin}/checkout`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ items: get(cartItems) })
+			body: JSON.stringify({ items: get(cartItems), userEmail: user?.email })
 		})
 			.then((data) => {
 				return data.json();
@@ -74,13 +77,20 @@
 		</div>
 		{#if $subtotal > 0}
 			<p>Subtotal: CHF {$subtotal.toFixed(2)}</p>
-			<button class="variant-ghost-primary h3 btn mt-4 font-bold" on:click={() => checkout()}
-				>{#if !loading}
-					Check Out
+			<button
+				class="variant-ghost-primary h3 btn mt-4 font-bold"
+				disabled={!user}
+				on:click={() => checkout()}
+				>{#if user}
+					{#if !loading}
+						Check Out
+					{:else}
+						Loading ...
+					{/if}
 				{:else}
-					Loading ...
-				{/if}</button
-			>
+					<p>Please log in to check out</p>
+				{/if}
+			</button>
 		{/if}
 	{:else if $cartItems.length === 0}
 		<h3 class="h3 font-bold">Your cart is empty</h3>

@@ -55,7 +55,7 @@
 		"@libsql/client": "^0.4.0-pre.7",
 		"@lucia-auth/adapter-drizzle": "^1.0.2",
 		"arctic": "^1.2.1",
-		"dotenv": "^16.3.1",
+		"dotenv": "^16.4.5",
 		"drizzle-orm": "^0.29.3",
 		"highlight.js": "11.9.0",
 		"oslo": "^1.1.3",

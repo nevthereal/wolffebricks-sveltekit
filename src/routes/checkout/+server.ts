@@ -1,12 +1,12 @@
 import type { RequestHandler } from './$types';
 import Stripe from 'stripe';
-import type { CartItem } from '../../app';
+import { STORE_DOMAIN, STRIPE_API_KEY } from '$env/static/private';
 
-const stripe = new Stripe(import.meta.env.VITE_STRIPE_API_KEY, {
+const stripe = new Stripe(STRIPE_API_KEY, {
 	apiVersion: '2023-10-16'
 });
 
-const store_domain = import.meta.env.VITE_STORE_DOMAIN;
+const store_domain = STORE_DOMAIN;
 
 const getProductPrice = async (id: string) => {
 	try {
@@ -21,6 +21,7 @@ const getProductPrice = async (id: string) => {
 export const POST: RequestHandler = async ({ request }) => {
 	const data = await request.json();
 	const items: CartItem[] = data.items;
+	const email = data.userEmail;
 
 	let lineItems: any = [];
 	for (let item of items) {
@@ -32,6 +33,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		line_items: lineItems,
 		mode: 'payment',
 		allow_promotion_codes: true,
+		customer_email: email,
 		success_url: `${store_domain}/success?id={CHECKOUT_SESSION_ID}`,
 		cancel_url: `${store_domain}/cancel`
 	});
