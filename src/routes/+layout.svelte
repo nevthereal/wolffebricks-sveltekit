@@ -65,9 +65,8 @@
 			on:click={() => triggerDrawer()}><i class="fa-solid fa-bars"></i></button
 		>
 		<a href="/"><h1 class="h1 font-black">Wolffe Bricks</h1></a>
-		<button
-			class="active:scale-95 ease-in-out duration-200 my-auto h1"
-			on:click={() => triggerCart()}><i class="fa-solid fa-cart-shopping"></i></button
+		<a href="/cart" class="active:scale-95 ease-in-out duration-200 my-auto h1"
+			><i class="fa-solid fa-cart-shopping"></i></a
 		>
 	</div>
 	<!-- Desktop: -->
@@ -83,12 +82,12 @@
 				><h3 class="h3">Info</h3></a
 			>
 		</div>
-		<button
-			class="my-aut hover:scale-105 duration-200 h2 md:text-4xl active:scale-95 ease-in-out"
-			on:click={() => triggerCart()}
+		<a
+			href="/cart"
+			class="my-auto hover:scale-105 duration-200 h2 md:text-4xl active:scale-95 ease-in-out"
 		>
 			<i class="fa-solid fa-cart-shopping" />
-		</button>
+		</a>
 	</div>
 </nav>
 

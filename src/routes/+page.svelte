@@ -9,7 +9,7 @@
 </svelte:head>
 
 <div class="text-center bg-no-repeat bg-center bg-cover w-full bg-white">
-	<div id="hero" class="w-full h-screen flex">
+	<div id="hero" class="w-full h-screen flex bg-fixed">
 		<div class="font-black text-white bg-cover w-full my-auto">
 			<h1 class="uppercase h1">Wolffe Bricks</h1>
 			<h2 class="text-base md:text-lg tracking-wider my-4 h2">LEGO® MOCs from Switzerland!</h2>

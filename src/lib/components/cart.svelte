@@ -44,26 +44,3 @@
 			});
 	};
 </script>
-
-<div class={classes}>
-	<h1 class="h1 font-black mb-4">Your Cart:</h1>
-	{#if $cartItems.length > 0}
-		<div class="overflow-auto max-h-[40dvh]">
-			{#each $cartItems as item (item.id)}
-				<CartProduct itemId={item.id} />
-			{/each}
-		</div>
-		{#if $subtotal > 0}
-			<p>Subtotal: CHF {$subtotal.toFixed(2)}</p>
-			<button class="btn variant-ghost-primary mt-4 h3 font-bold" on:click={() => checkout()}
-				>{#if !loading}
-					Check Out
-				{:else}
-					Loading ...
-				{/if}</button
-			>
-		{/if}
-	{:else if $cartItems.length === 0}
-		<p>Your cart is empty</p>
-	{/if}
-</div>
