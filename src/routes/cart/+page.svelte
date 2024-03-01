@@ -52,10 +52,12 @@
 		<h1 class="h1 font-black">Your Cart:</h1>
 		<div class="mt-2">
 			{#if user}
-				<p>
-					Logged in as <span class="text-primary-400-500-token font-medium">{user.username}</span>
-				</p>
-				<a href="/" class="variant-ghost-primary btn btn-sm font-bold">Log out</a>
+				<div class="mx-auto flex justify-center gap-2">
+					<p class="my-auto">
+						Logged in as <span class="text-primary-400-500-token font-medium">{user.username}</span>
+					</p>
+					<a href="/logout" class="variant-ghost-primary btn btn-sm font-bold">Log out</a>
+				</div>
 			{:else}
 				<a
 					class="variant-ghost-primary btn btn-sm mx-auto flex w-min gap-2 font-bold"
@@ -81,6 +83,6 @@
 			>
 		{/if}
 	{:else if $cartItems.length === 0}
-		<p>Your cart is empty</p>
+		<h3 class="h3 font-bold">Your cart is empty</h3>
 	{/if}
 </div>
