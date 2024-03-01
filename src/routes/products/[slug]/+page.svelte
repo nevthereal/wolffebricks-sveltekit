@@ -25,10 +25,10 @@
 </svelte:head>
 
 <div class="mx-4">
-	<div class="md:grid m-4 md:grid-cols-2">
+	<div class="m-4 md:grid md:grid-cols-2">
 		<img src={product.img_main} alt="" class="mx-auto rounded-token" />
 		<div class="my-auto">
-			<h1 class="font-bold h1 m-6">{product.title}</h1>
+			<h1 class="h1 m-6 font-bold">{product.title}</h1>
 			<h2 class="h2 font-bold">Short description:</h2>
 			<p class="m-4">
 				Designed by <span class="font-bold">{product.designer}</span> <br />
@@ -37,22 +37,22 @@
 			</p>
 			{#if $inCart}
 				<button
-					class="font-bold btn variant-ghost-error"
+					class="variant-ghost-error btn font-bold"
 					on:click={() => removeFromCart(product.id)}
 				>
 					Remove From Cart
 				</button>
 			{:else}
-				<button class="font-bold btn variant-ghost-success" on:click={() => addToCart(product.id)}>
+				<button class="variant-ghost-primary btn font-bold" on:click={() => addToCart(product.id)}>
 					CHF {product.price.toFixed(2)} - Add to cart
 				</button>
 			{/if}
 		</div>
 	</div>
-	<h2 class="h2 font-bold mb-4">Gallery:</h2>
-	<div class="flex justify-center flex-wrap gap-4 w-full">
-		<img class="md:w-[480px] rounded-token" src={product.img_main} alt="" />
-		<img class="md:w-[480px] rounded-token" src={product.img_1} alt="" />
-		<img class="md:w-[480px] rounded-token" src={product.img_2} alt="" />
+	<h2 class="h2 mb-4 font-bold">Gallery:</h2>
+	<div class="flex w-full flex-wrap justify-center gap-4">
+		<img class="rounded-token md:w-[480px]" src={product.img_main} alt="" />
+		<img class="rounded-token md:w-[480px]" src={product.img_1} alt="" />
+		<img class="rounded-token md:w-[480px]" src={product.img_2} alt="" />
 	</div>
 </div>
