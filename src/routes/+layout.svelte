@@ -62,18 +62,15 @@
 		<a href="/">
 			<img src={logo} alt="logo" loading="eager" class="btn w-32 p-2" />
 		</a>
-		<div class="my-auto flex gap-8 text-lg md:text-xl">
-			<a href="/products" class="font-bold duration-200 ease-in-out hover:scale-105 active:scale-95"
+		<div class="my-auto flex text-lg md:text-xl">
+			<a href="/products" class="btn btn-xl font-bold duration-200 ease-in-out"
 				><h3 class="h3">Products</h3></a
 			>
-			<a href="/info" class="font-bold duration-200 ease-in-out hover:scale-105 active:scale-95"
+			<a href="/info" class="btn btn-xl font-bold duration-200 ease-in-out"
 				><h3 class="h3">Info</h3></a
 			>
 		</div>
-		<a
-			href="/cart"
-			class="h2 my-auto duration-200 ease-in-out hover:scale-105 active:scale-95 md:text-4xl"
-		>
+		<a href="/cart" class="h2 btn btn-xl my-auto duration-200 ease-in-out md:text-4xl">
 			<i class="fa-solid fa-cart-shopping" />
 		</a>
 	</div>

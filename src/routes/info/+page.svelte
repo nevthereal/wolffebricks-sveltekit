@@ -2,13 +2,13 @@
 	<title>Wolffe Bricks - Info</title>
 </svelte:head>
 
-<div class="md:max-w-[50%] mx-auto">
-	<h1 class="h1 font-black uppercase my-16">Info</h1>
+<div class="mx-auto md:max-w-[50%]">
+	<h1 class="h1 my-16 font-black uppercase">Info</h1>
 	<div class="my-6">
 		<h2 class="h2 font-bold">About us</h2>
 		<p>
-			Me (Neville Brem) and William Tang are two students from Switzerland, who love to build and
-			design LEGO models. In Summer 2022, we came up with the idea to sell our designs. William
+			Me (Neville Brem) and William /infoTang are two students from Switzerland, who love to build
+			and design LEGO models. In Summer 2022, we came up with the idea to sell our designs. William
 			designed most of the sets, while I was busy building this site and processing all the orders.{' '}
 			<br />
 			With purchasing our products, you do a favor to the climate.{' '}
@@ -31,7 +31,7 @@
 			Our payments are in CHF (Swiss Franc), because we are a Switzerland-based company. We accept
 			the following credit cards:
 		</p>
-		<ul class="flex justify-center h2 gap-4 my-2">
+		<ul class="h2 my-2 flex justify-center gap-4">
 			<li>
 				<i class="fa-brands fa-cc-visa" />
 			</li>
@@ -52,7 +52,7 @@
 			</li>
 		</ul>
 		And following wallets:
-		<ul class="flex justify-center h2 gap-4 my-2">
+		<ul class="h2 my-2 flex justify-center gap-4">
 			<li>
 				<i class="fa-brands fa-apple-pay" />
 			</li>
@@ -62,7 +62,7 @@
 		</ul>
 	</div>
 
-	<h1 class="h1 font-black uppercase my-8">Contact</h1>
+	<h1 class="h1 my-8 font-black uppercase">Contact</h1>
 	<p>
 		Send us an Email:{' '}
 		<a class="anchor" href="mailto:support@wolffebricks.store"> support@wolffebricks.store </a>
@@ -78,9 +78,9 @@
 		</a>
 	</p>
 
-	<div class="flex gap-2 justify-center my-8">
-		<a href="/terms-of-service" class="anchor"> Terms of Service </a>
+	<div class="my-8 flex justify-center gap-2">
+		<a href="/info/terms-of-service" class="anchor"> Terms of Service </a>
 		<p>•</p>
-		<a href="/privacy-policy" class="anchor"> Privacy Policy </a>
+		<a href="/info/privacy-policy" class="anchor"> Privacy Policy </a>
 	</div>
 </div>
