@@ -1,4 +1,4 @@
-import { OAuth2RequestError } from 'arctic';
+import { GitHub, OAuth2RequestError } from 'arctic';
 import { generateId } from 'lucia';
 import { github, lucia } from '$lib/server/auth';
 
@@ -66,12 +66,14 @@ export async function GET(event: RequestEvent): Promise<Response> {
 		// the specific error message depends on the provider
 		if (e instanceof OAuth2RequestError) {
 			// invalid code
+			console.log(e);
 			return new Response(null, {
 				status: 400
 			});
 		}
 		return new Response(null, {
-			status: 500
+			status: 500,
+			statusText: 'wtf'
 		});
 	}
 }

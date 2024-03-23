@@ -15,7 +15,7 @@
 		"test:unit": "vitest",
 		"generate": "drizzle-kit generate:sqlite",
 		"migrate": "drizzle-kit push:sqlite",
-		"studio": "drizzle-kit studio"
+		"studio": "drizzle-kit studio --verbose"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
