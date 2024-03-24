@@ -11,15 +11,15 @@
 	}
 </script>
 
-<div class="flex justify-between card p-4 my-2">
-	<a href={`/products/${item.slug}`} class="flex gap-8 items-center">
-		<img src={item.img_main} alt={item.title} class="h-24 rounded-token hidden md:block" />
+<div class="card my-2 flex justify-between p-4">
+	<a href={`/products/${item.slug}`} class="flex items-center gap-8">
+		<img src={item.img_main} alt={item.title} class="hidden h-24 rounded-token md:block" />
 		<div class="my-auto text-left">
 			<h3 class="h3 my-auto font-bold">{item.title}</h3>
 			<h4 class="h4">CHF {item.price}</h4>
 		</div>
 	</a>
-	<button class="btn h4 my-auto" on:click={() => removeFromCart(item.id)}>
+	<button class="h4 btn my-auto" on:click={() => removeFromCart(item.id)}>
 		<i class="fa-solid fa-trash"></i>
 	</button>
 </div>

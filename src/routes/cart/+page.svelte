@@ -4,11 +4,6 @@
 	import { cartItems, clearCart } from '$lib/cart/cart';
 	import { get, writable } from 'svelte/store';
 	import { getProductData } from '$lib/cart/products';
-	import type { PageData } from './$types';
-
-	export let data: PageData;
-
-	const { user } = data;
 
 	let subtotal = writable(0);
 	const getSubtotal = (items: CartItem[]) => {
@@ -31,14 +26,12 @@
 	const checkout = async () => {
 		loading = true;
 
-		if (!user) return;
-
 		await fetch(`${$page.url.origin}/checkout`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ items: get(cartItems), userEmail: user?.email })
+			body: JSON.stringify({ items: get(cartItems) })
 		})
 			.then((data) => {
 				return data.json();
@@ -53,21 +46,6 @@
 <div class="mx-8 my-16 md:mx-auto md:max-w-[60%]">
 	<div class="mb-4">
 		<h1 class="h1 font-black">Your Cart:</h1>
-		<div class="mt-2">
-			{#if user}
-				<div class="mx-auto flex justify-center gap-2">
-					<p class="my-auto">
-						Logged in as <span class="text-primary-400-500-token font-medium">{user.username}</span>
-					</p>
-					<a href="/logout" class="variant-ghost-primary btn btn-sm font-bold">Log out</a>
-				</div>
-			{:else}
-				<a
-					class="variant-ghost-primary btn btn-sm mx-auto flex w-min gap-2 font-bold"
-					href="/login/github"><i class="fa-brands fa-github"></i><span>Log in with GitHub</span></a
-				>
-			{/if}
-		</div>
 	</div>
 	{#if $cartItems.length > 0}
 		<div class="max-h-[40dvh] overflow-auto">
@@ -77,18 +55,11 @@
 		</div>
 		{#if $subtotal > 0}
 			<p>Subtotal: CHF {$subtotal.toFixed(2)}</p>
-			<button
-				class="variant-ghost-primary h3 btn mt-4 font-bold"
-				disabled={!user}
-				on:click={() => checkout()}
-				>{#if user}
-					{#if !loading}
-						Check Out
-					{:else}
-						Loading ...
-					{/if}
+			<button class="variant-ghost-primary h3 btn mt-4 font-bold" on:click={() => checkout()}>
+				{#if !loading}
+					Check Out
 				{:else}
-					<p>Please log in to check out</p>
+					Loading ...
 				{/if}
 			</button>
 		{/if}

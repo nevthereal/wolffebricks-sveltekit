@@ -2,12 +2,10 @@
 	export let product: Product;
 </script>
 
-<div class="card btn p-4">
-	<a href={`products/${product.slug}`}>
-		<img class="p-2 w-96 mx-auto rounded-3xl" src={product.img_main} alt="product" loading="lazy" />
-		<h3 class="font-bold h3 text-center">{product.title}</h3>
-		<h4 class="font-bold h4">
-			{product.price.toFixed(2)} CHF
-		</h4>
-	</a>
-</div>
+<a class="card flex flex-col p-6" href={`products/${product.slug}`}>
+	<img class="m-2 mx-auto w-96 rounded-token" src={product.img_main} alt="product" loading="lazy" />
+	<h3 class="h3 text-center font-bold">{product.title}</h3>
+	<h4 class="h4 font-bold">
+		{product.price.toFixed(2)} CHF
+	</h4>
+</a>
