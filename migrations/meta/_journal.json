@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1711344665719,
+      "tag": "0000_lowly_virginia_dare",
+      "breakpoints": true
+    }
+  ]
+}

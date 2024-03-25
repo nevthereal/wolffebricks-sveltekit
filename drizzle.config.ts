@@ -6,7 +6,6 @@ export default {
 	out: './migrations',
 	driver: 'turso',
 	dbCredentials: {
-		url: process.env.DB_URL!,
-		authToken: process.env.DB_TOKEN!
+		url: 'file:./local.db'
 	}
 } satisfies Config;
