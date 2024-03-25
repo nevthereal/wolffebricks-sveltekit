@@ -1,5 +1,10 @@
 declare global {
-	// namespace App {}
+	namespace App {
+		interface Locals {
+			user: import('lucia').User | null;
+			session: import('lucia').Session | null;
+		}
+	}
 	interface Product {
 		id: string;
 		slug: string;
