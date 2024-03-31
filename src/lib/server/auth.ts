@@ -35,7 +35,11 @@ declare module 'lucia' {
 	}
 }
 
-export const google = new Google(GOOGLE_ID, GOOGLE_SECRET, '/api/login/google');
+export const google = new Google(
+	GOOGLE_ID,
+	GOOGLE_SECRET,
+	dev ? 'http://localhost:5173' : 'https://wolffebricks.store'
+);
 
 interface DatabaseUserAttributes {
 	github_id: number;
