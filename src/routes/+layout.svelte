@@ -14,7 +14,7 @@
 		ModalStore
 	} from '@skeletonlabs/skeleton';
 	import { Modal, Toast } from '@skeletonlabs/skeleton';
-	import logo from '$lib/img/wb_logo.png';
+	import logo from '$lib/img/wb_logo.png?enhanced';
 	import { pushState } from '$app/navigation';
 
 	initializeStores();
@@ -60,7 +60,7 @@
 	<!-- Desktop: -->
 	<div class="hidden justify-between p-4 md:flex">
 		<a href="/">
-			<img src={logo} alt="logo" loading="eager" class="btn w-32 p-2" />
+			<enhanced:img src={logo} alt="logo" loading="eager" class="btn w-32 p-2" />
 		</a>
 		<div class="my-auto flex text-lg md:text-xl">
 			<a href="/products" class="btn btn-xl font-bold duration-200 ease-in-out"

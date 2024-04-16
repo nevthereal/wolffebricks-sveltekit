@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Panel from '$lib/components/panel.svelte';
 	import { products } from '$lib/cart/products';
+	import banner from '$lib/img/wb_banner.svg';
 </script>
 
 <svelte:head>
@@ -8,13 +9,16 @@
 	<meta name="description" content="Wolffe Bricks - Custom LEGO Sets" />
 </svelte:head>
 
-<div class="text-center bg-no-repeat bg-center bg-cover w-full bg-white">
-	<div id="hero" class="w-full h-screen flex bg-fixed">
-		<div class="font-black text-white bg-cover w-full my-auto">
-			<h1 class="uppercase h1">Wolffe Bricks</h1>
-			<h2 class="text-base md:text-lg tracking-wider my-4 h2">LEGO® MOCs from Switzerland!</h2>
+<div class="w-full bg-white bg-cover bg-center bg-no-repeat text-center">
+	<div
+		style={`background-image: url(${banner});`}
+		class="flex h-screen w-full bg-cover bg-fixed bg-top bg-no-repeat"
+	>
+		<div class="my-auto w-full bg-cover font-black text-white">
+			<h1 class="h1 uppercase">Wolffe Bricks</h1>
+			<h2 class="h2 my-4 text-base tracking-wider md:text-lg">LEGO® MOCs from Switzerland!</h2>
 			<div
-				class="card variant-glass-warning w-fit mx-auto max-w-[90%] md:max-w-[70%] my-8 p-6 rounded-token"
+				class="card variant-glass-warning mx-auto my-8 w-fit max-w-[90%] p-6 rounded-token md:max-w-[70%]"
 			>
 				<h2 class="text-2xl">We're Back!</h2>
 				<p class="font-semibold">
@@ -26,8 +30,8 @@
 	</div>
 </div>
 <div id="featured">
-	<h2 class="h2 font-bold mb-4 mt-16">Featured Products:</h2>
-	<div class="flex justify-center gap-4 flex-wrap px-4">
+	<h2 class="h2 mb-4 mt-16 font-bold">Featured Products:</h2>
+	<div class="flex flex-wrap justify-center gap-4 px-4">
 		<Panel product={products[2]} />
 		<Panel product={products[3]} />
 		<Panel product={products[4]} />

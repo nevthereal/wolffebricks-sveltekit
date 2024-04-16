@@ -13,7 +13,11 @@
 
 <div class="card my-2 flex justify-between p-4">
 	<a href={`/products/${item.slug}`} class="flex items-center gap-8">
-		<img src={item.img_main} alt={item.title} class="hidden h-24 rounded-token md:block" />
+		<enhanced:img
+			src={item.img_main}
+			alt={item.title}
+			class="hidden h-24 w-24 rounded-token md:block"
+		/>
 		<div class="my-auto text-left">
 			<h3 class="h3 my-auto font-bold">{item.title}</h3>
 			<h4 class="h4">CHF {item.price}</h4>
