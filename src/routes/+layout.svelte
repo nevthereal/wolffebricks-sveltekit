@@ -16,6 +16,7 @@
 	import { Modal, Toast } from '@skeletonlabs/skeleton';
 	import logo from '$lib/img/wb_logo.png?enhanced';
 	import { pushState } from '$app/navigation';
+	import Cart from '$lib/components/Cart.svelte';
 
 	initializeStores();
 
@@ -32,6 +33,18 @@
 		};
 		drawerStore.open(s);
 	};
+
+	// cart
+	const modalStore: ModalStore = getModalStore();
+
+	const triggerCart = (): void => {
+		const s: ModalSettings = {
+			type: 'component',
+			component: { ref: Cart, props: { classes: 'card p-8 w-modal', modal: true } }
+		};
+		pushState('/cart', {});
+		modalStore.trigger(s);
+	};
 </script>
 
 <Drawer>
@@ -42,7 +55,7 @@
 		</ul>
 	{/if}
 </Drawer>
-<Modal />
+<Modal on:backdrop={() => history.back()} />
 <Toast />
 
 <nav>
@@ -70,9 +83,12 @@
 				><h3 class="h3">Info</h3></a
 			>
 		</div>
-		<a href="/cart" class="h2 btn btn-xl my-auto duration-200 ease-in-out md:text-4xl">
+		<button
+			on:click={() => triggerCart()}
+			class="h2 btn btn-xl my-auto duration-200 ease-in-out md:text-4xl"
+		>
 			<i class="fa-solid fa-cart-shopping" />
-		</a>
+		</button>
 	</div>
 </nav>
 

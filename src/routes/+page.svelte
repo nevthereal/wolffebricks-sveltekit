@@ -2,6 +2,7 @@
 	import Panel from '$lib/components/panel.svelte';
 	import { products } from '$lib/cart/products';
 	import banner from '$lib/img/wb_banner.svg';
+	import Cart from '$lib/components/Cart.svelte';
 </script>
 
 <svelte:head>
