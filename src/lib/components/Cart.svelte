@@ -6,6 +6,7 @@
 	import { getProductData } from '$lib/cart/products';
 	import { getModalStore, type CssClasses } from '@skeletonlabs/skeleton';
 	import { pushState } from '$app/navigation';
+	import wretch from 'wretch';
 
 	export let classes: CssClasses;
 	export let modal = false;
@@ -31,19 +32,14 @@
 	const checkout = async () => {
 		loading = true;
 
-		await fetch(`${$page.url.origin}/checkout`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ items: get(cartItems) })
-		})
-			.then((data) => {
-				return data.json();
+		await wretch(`${$page.url.origin}/checkout`)
+			.content('application/json')
+			.post({
+				items: get(cartItems)
 			})
-			.then((data) => {
+			.json((json) => {
 				clearCart();
-				window.location.replace(data.url);
+				return window.location.replace(json.url);
 			});
 	};
 
