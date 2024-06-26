@@ -7,8 +7,8 @@
 	<div class="my-6">
 		<h2 class="h2 font-bold">About us</h2>
 		<p>
-			Me (Neville Brem) and William /infoTang are two students from Switzerland, who love to build
-			and design LEGO models. In Summer 2022, we came up with the idea to sell our designs. William
+			Me (Neville Brem) and William Tang are two students from Switzerland, who love to build and
+			design LEGO models. In Summer 2022, we came up with the idea to sell our designs. William
 			designed most of the sets, while I was busy building this site and processing all the orders.{' '}
 			<br />
 			With purchasing our products, you do a favor to the climate.{' '}
@@ -21,7 +21,7 @@
 		<p>
 			Your Checkouts are securely managed by{' '}
 			<a href="https://stripe.com" target="_blank" class="font-bold"> Stripe </a>
-			. We will then send the instruction(s) and a partlist file(s) to your email. This email is either
+			. We will then send the instruction(s) and a part list file(s) to your email. This email is either
 			your address related to your Google Account or your email, which you need to confirm first.
 		</p>
 	</div>
