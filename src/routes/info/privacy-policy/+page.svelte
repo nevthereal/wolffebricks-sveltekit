@@ -57,8 +57,8 @@
 			<h2>5. Your choices:</h2>
 			<p>
 				You can access, update, or delete your personal information by contacting us at
-				support@wolffebricks.store. You can also opt-out of receiving marketing communications from
-				us by following the unsubscribe instructions in our emails.
+				contact@nevillebrem.com. You can also opt-out of receiving marketing communications from us
+				by following the unsubscribe instructions in our emails.
 			</p>
 		</div>
 		<div>

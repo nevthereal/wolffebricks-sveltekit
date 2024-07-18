@@ -106,7 +106,7 @@
 			<a href="https://twitter.com/wolffe_bricks" target="_blank" class="h1">
 				<i class="fa-brands fa-twitter-square" />
 			</a>
-			<a href="mailto:support@wolffebricks.store" class="h1">
+			<a href="mailto:contact@nevillebrem.com" class="h1">
 				<i class="fa-solid fa-envelope-square" />
 			</a>
 		</div>

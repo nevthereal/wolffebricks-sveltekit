@@ -65,7 +65,7 @@
 	<h1 class="h1 my-8 font-black uppercase">Contact</h1>
 	<p>
 		Send us an Email:{' '}
-		<a class="anchor" href="mailto:support@wolffebricks.store"> support@wolffebricks.store </a>
+		<a class="anchor" href="mailto:contact@nevillebrem.com"> contact@nevillebrem.com </a>
 	</p>
 	<p>
 		Send us a direct message on Twitter:{' '}
