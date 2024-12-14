@@ -32,7 +32,7 @@
 	const checkout = async () => {
 		loading = true;
 
-		await wretch(`${$page.url.origin}/checkout`)
+		await wretch(`/checkout`)
 			.content('application/json')
 			.post({
 				items: get(cartItems)

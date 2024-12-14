@@ -9,7 +9,7 @@ Porting this app to SvelteKit is a huge step in my development journey and I am 
 SvelteKit will not only allow me to bring the backend and frontend closer together, because it, is compared to React, a full-stack framework. SvelteKit's efficient routing system also comes in handy.
 
 ➡️ [Old Wolffe Bricks Repo](https://github.com/nevthereal/wolffebricks-v2) \
-➡️ [Wolffe Bricks](https://wolffebricks.store)
+➡️ [Wolffe Bricks](https://wolffebricks.rocks)
 
 ## 💼 Technologies used
 
