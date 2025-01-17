@@ -98,7 +98,9 @@
 <!-- Footer: -->
 <footer>
 	<div class="mx-4 py-4">
-		<p class="text-xl font-bold uppercase md:text-lg">©Neville Brem and William Tang</p>
+		<p class="text-xl font-bold uppercase md:text-lg">
+			© {new Date().getFullYear()} Neville Brem and William Tang
+		</p>
 		<div class="mx-auto my-4 flex justify-center gap-2">
 			<a href="https://instagram.com/wolffebricks_official" target="_blank" class="h1">
 				<i class="fa-brands fa-instagram-square" />
@@ -106,7 +108,7 @@
 			<a href="https://twitter.com/wolffe_bricks" target="_blank" class="h1">
 				<i class="fa-brands fa-twitter-square" />
 			</a>
-			<a href="mailto:contact@nevillebrem.com" class="h1">
+			<a href="mailto:support@wollfebricks.rocks" class="h1">
 				<i class="fa-solid fa-envelope-square" />
 			</a>
 		</div>

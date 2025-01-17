@@ -84,7 +84,7 @@
 			<p>6.1. Returns: You are not eligible to return your products once shipped.</p>
 			<p>
 				6.2. Refunds: If your order hasn't been sent yet, you can request a refund at{' '}
-				<a href="mailto:contact@nevillebrem.com"> contact@nevillebrem.com </a>
+				<a href="mailto:support@wollfebricks.rocks"> support@wollfebricks.rocks </a>
 			</p>
 		</div>
 		<div>
@@ -130,7 +130,7 @@
 	</div>
 	<p>
 		If you have any questions or concerns regarding these Terms and Conditions, please contact us at{' '}
-		<a href="mailto:contact@nevillebrem.com"> contact@nevillebrem.com </a>
+		<a href="mailto:support@wollfebricks.rocks"> support@wollfebricks.rocks </a>
 		.
 	</p>
 	<p>This Document was last updated on 28. July.</p>
